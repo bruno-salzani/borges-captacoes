@@ -1,382 +1,383 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Centro Terapêutico Despertar Nova Era</title>
-  <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: Arial, sans-serif; background-color: #f4f4f4; color: #333; line-height: 1.6; }
-    header {
-      background: url('https://images.unsplash.com/photo-1529070538774-1843cb3265df?auto=format&fit=crop&w=1400&q=80') no-repeat center center/cover;
-      color: white;
-      text-align: center;
-      padding: 80px 20px;
-    }
-    header h1 {
-      font-size: 2.5em;
-      text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
-    }
-    header p.verse {
-      font-size: 1.3em;
-      margin-top: 15px;
-      text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
-    }
-    section { padding: 40px 20px; max-width: 1200px; margin: auto; }
-    .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
-    .card {
-      background: white;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      transition: transform 0.2s;
-    }
-    .card:hover { transform: scale(1.02); }
-    .card h3 { margin-bottom: 10px; color: #1e88e5; }
-    .card p { margin-top: 10px; }
-    .icon { font-size: 1.5em; margin-right: 5px; }
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 15px;
-      padding: 20px;
-    }
-    .gallery img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-      border-radius: 10px;
-      cursor: pointer;
-      transition: transform 0.2s;
-    }
-    .gallery img:hover {
-      transform: scale(1.05);
-    }
-    .modal {
-      display: none;
-      position: fixed;
-      z-index: 9999;
-      left: 0; top: 0;
-      width: 100%; height: 100%;
-      background: rgba(0,0,0,0.8);
-      justify-content: center;
-      align-items: center;
-    }
-    .modal img {
-      max-width: 90%;
-      max-height: 90%;
-      border-radius: 10px;
-    }
-    .contact {
-      text-align: center;
-      padding: 40px 20px;
-      background-color: #1e88e5;
-      color: white;
-    }
-    .contact a {
-      color: white;
-      font-weight: bold;
-      margin: 0 15px;
-      font-size: 1.2em;
-      text-decoration: none;
-    }
-    footer {
-      background: #333;
-      color: white;
-      text-align: center;
-      padding: 20px;
-    }
-    #whatsapp-float {
-      position: fixed;
-      width: 60px;
-      height: 60px;
-      bottom: 20px;
-      right: 20px;
-      background-color: #25d366;
-      color: white;
-      border-radius: 50%;
-      text-align: center;
-      font-size: 30px;
-      box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
-      cursor: pointer;
-      z-index: 10000;
-
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-    #whatsapp-float img {
-      width: 30px;
-      height: 30px;
-      margin: 0;
-      user-select: none;
-    }
-    #whatsapp-float:hover {
-      box-shadow: 0 0 15px 5px rgba(37, 211, 102, 0.7);
-      transition: box-shadow 0.3s ease;
-    }
-    .carousel-container {
-      position: relative;
-      max-width: 1000px;
-      margin: 0 auto 40px;
-    }
-    .carousel-scroll {
-      display: flex;
-      overflow-x: auto;
-      gap: 20px;
-      padding-bottom: 10px;
-      scroll-behavior: smooth;
-    }
-    .carousel-scroll::-webkit-scrollbar {
-      height: 8px;
-    }
-    .carousel-scroll::-webkit-scrollbar-thumb {
-      background: #1e88e5;
-      border-radius: 4px;
-    }
-    .carousel-scroll::-webkit-scrollbar-track {
-      background: #ddd;
-    }
-    .carousel-card {
-      flex: 0 0 280px;
-      background: white;
-      border-radius: 10px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      padding: 20px;
-      box-sizing: border-box;
-      text-align: center;
-      user-select: none;
-      cursor: grab;
-    }
-    .carousel-card h3 {
-      color: #1e88e5;
-      margin-bottom: 10px;
-    }
-    .carousel-card p {
-      margin-top: 5px;
-      font-size: 0.9em;
-      color: #555;
-    }
-    .carousel-scroll {
-      cursor: grab;
-      user-select: none;
-    }
-    .carousel-scroll.active {
-      cursor: grabbing;
-    }
-
-
-#sobre-nos {
-  background: none;
-  padding: 40px 20px;
-  border-radius: 0;
-  max-width: 1200px;
-  margin: 40px auto;
-  box-shadow: none;
-}
-
-#sobre-nos h2 {
-  color: #000;
-  margin-bottom: 20px;
-  text-align: left;
-  font-size: 2em;
-}
-
-#sobre-nos p {
-  max-width: none;
-  margin: 0 0 15px 0;
-  font-size: 1.1em;
-  color: #444;
-  line-height: 1.5;
-  text-align: left;
-}
-    
-  </style>
-</head>
-<body>
-  <header>
-    <h1>Centro Terapêutico Despertar Nova Era</h1>
-    <p class="verse">"Não fui eu que ordenei a você? Seja forte e corajoso! Não se apavore nem desanime, pois o Senhor, o seu Deus, estará com você por onde você andar."<br>Josué 1:9</p>
-  </header>
-
-  <section id="sobre-nos">
-    <h2>Sobre Nós</h2>
-    <p>Somos uma equipe dedicada e experiente na captação de pacientes para N.A., atuando com sensibilidade e compromisso tanto na captação voluntária quanto involuntária.</p>
-    <p>Trabalhamos incansavelmente para oferecer acesso às melhores clínicas de tratamento em todo o Brasil, garantindo atendimento humanizado e suporte completo.</p>
-    <p>Nosso objetivo é encontrar o caminho certo para cada pessoa, levando esperança, cuidado e transformação para quem precisa.</p>
-    <p>Estamos prontos para buscar e acompanhar você ou seu familiar nessa jornada rumo à recuperação.</p>
-  </section>
-
-  <section>
-    <h2>O que oferecemos</h2>
-    <div class="cards">
-      <div class="card">
-        <h3>Ambiente Seguro</h3>
-        <p>📹 Monitoramento 24h<br>🔏 Privacidade absoluta<br>💂 Segurança garantida</p>
-      </div>
-      <div class="card">
-        <h3>Infraestrutura Completa</h3>
-        <p>🏊 Piscina<br>🛌 Acomodações Confortáveis<br>📺 TV, Netflix e muito mais</p>
-      </div>
-      <div class="card">
-        <h3>Alimentação e Lazer</h3>
-        <p>🍽 4 Refeições diárias<br>♟ Jogos e Atividades<br>🌳 Contato com a Natureza</p>
-      </div>
-    </div>
-  </section>
-
-  <section>
-    <h2>Tratamentos Personalizados</h2>
-    <div class="cards">
-      <div class="card">
-        <h3>Equipe Multidisciplinar</h3>
-        <p>👨‍⚕ Psiquiatra<br>👩‍⚕ Psicóloga<br>👩‍⚕ Nutricionista<br>🏋 Fisioterapeuta</p>
-      </div>
-      <div class="card">
-        <h3>Abordagem Terapêutica</h3>
-        <p>📖 12 Passos (A.A./N.A.)<br>🧘 Terapias integradas<br>🎭 Arteterapia e Espiritualidade</p>
-      </div>
-      <div class="card">
-        <h3>Plano de Tratamento</h3>
-        <p>Individualizado e sigiloso<br>Atendimento familiar<br>Acompanhamento contínuo</p>
-      </div>
-    </div>
-  </section>
-
-  <section>
-    <h2>Clínicas Parceiras</h2>
-    <div class="carousel-scroll">
-      <div class="carousel-card"><h3>Unidade 1</h3><p>São Paulo, SP</p></div>
-      <div class="carousel-card"><h3>Unidade 2</h3><p>Rio de Janeiro, RJ</p></div>
-      <div class="carousel-card"><h3>Unidade 3</h3><p>Belo Horizonte, MG</p></div>
-      <div class="carousel-card"><h3>Unidade 4</h3><p>Curitiba, PR</p></div>
-      <div class="carousel-card"><h3>Unidade 5</h3><p>Porto Alegre, RS</p></div>
-      <div class="carousel-card"><h3>Unidade 6</h3><p>Fortaleza, CE</p></div>
-      <div class="carousel-card"><h3>Unidade 7</h3><p>Salvador, BA</p></div>
-      <div class="carousel-card"><h3>Unidade 8</h3><p>Recife, PE</p></div>
-      <div class="carousel-card"><h3>Unidade 9</h3><p>Florianópolis, SC</p></div>
-      <div class="carousel-card"><h3>Unidade 10</h3><p>Manaus, AM</p></div>
-      <div class="carousel-card"><h3>Unidade 11</h3><p>Goiânia, GO</p></div>
-      <div class="carousel-card"><h3>Unidade 12</h3><p>Campinas, SP</p></div>
-      <div class="carousel-card"><h3>Unidade 13</h3><p>São Luís, MA</p></div>
-      <div class="carousel-card"><h3>Unidade 14</h3><p>Belém, PA</p></div>
-      <div class="carousel-card"><h3>Unidade 15</h3><p>Cuiabá, MT</p></div>
-      <div class="carousel-card"><h3>Unidade 16</h3><p>Vitória, ES</p></div>
-      <div class="carousel-card"><h3>Unidade 17</h3><p>João Pessoa, PB</p></div>
-      <div class="carousel-card"><h3>Unidade 18</h3><p>Aracaju, SE</p></div>
-      <div class="carousel-card"><h3>Unidade 19</h3><p>Maceió, AL</p></div>
-      <div class="carousel-card"><h3>Unidade 20</h3><p>Ribeirão Preto, SP</p></div>
-      <div class="carousel-card"><h3>Unidade 21</h3><p>São José dos Campos, SP</p></div>
-      <div class="carousel-card"><h3>Unidade 22</h3><p>Uberlândia, MG</p></div>
-      <div class="carousel-card"><h3>Unidade 23</h3><p>Pelotas, RS</p></div>
-      <div class="carousel-card"><h3>Unidade 24</h3><p>Taubaté, SP</p></div>
-    </div>
-  </section>
-
-  <section>
-    <h2>Galeria de Imagens</h2>
-    <div class="gallery">
-      <img src="src/assets/img/1.jpg" alt="Clínica 1" onclick="openModal(this.src)" />
-      <img src="src/assets/img/2.jpg" alt="Clínica 2" onclick="openModal(this.src)" />
-      <img src="src/assets/img/3.jpg" alt="Clínica 3" onclick="openModal(this.src)" />
-      <img src="src/assets/img/4.jpg" alt="Clínica 4" onclick="openModal(this.src)" />
-      <img src="src/assets/img/5.jpg" alt="Clínica 5" onclick="openModal(this.src)" />
-      <img src="src/assets/img/6.jpg" alt="Clínica 6" onclick="openModal(this.src)" />
-      <img src="src/assets/img/7.jpg" alt="Clínica 7" onclick="openModal(this.src)" />
-      <img src="src/assets/img/8.jpg" alt="Clínica 8" onclick="openModal(this.src)" />
-    </div>
-  </section>
-
-  <div class="modal" id="imgModal" onclick="closeModal()">
-    <img id="modalImg" src="" alt="Imagem em destaque" />
-  </div>
-
-  <section class="contact">
-    <h2>Fale Conosco</h2>
-    <p>Estamos disponíveis 24 horas por dia para atender você e sua família.</p>
-    <a href="https://api.whatsapp.com/send?phone=SEUNUMERO" target="_blank">📱 Whatsapp</a>
-    <a href="https://facebook.com/SUAPAGINA" target="_blank">📘 Facebook</a>
-    <a href="https://instagram.com/SEUINSTAGRAM" target="_blank">📷 Instagram</a>
-  </section>
-
-  <a href="https://api.whatsapp.com/send?phone=SEUNUMERO" target="_blank" id="whatsapp-float" aria-label="WhatsApp">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp"/>
-  </a>
-
-  <footer>
-    <p>&copy; 2025 Centro Terapêutico Despertar Nova Era. Todos os direitos reservados.</p>
-  </footer>
-
-  <script>
-    function openModal(src) {
-      document.getElementById('modalImg').src = src;
-      document.getElementById('imgModal').style.display = 'flex';
-    }
-    function closeModal() {
-      document.getElementById('imgModal').style.display = 'none';
-    }
-
-    const carousel = document.querySelector('.carousel-scroll');
-
-    let isDown = false;
-    let startX;
-    let scrollLeft;
-
-    // Mouse drag (desktop)
-    carousel.addEventListener('mousedown', (e) => {
-      isDown = true;
-      carousel.classList.add('active');
-      startX = e.pageX - carousel.offsetLeft;
-      scrollLeft = carousel.scrollLeft;
-    });
-    carousel.addEventListener('mouseleave', () => {
-      isDown = false;
-      carousel.classList.remove('active');
-    });
-    carousel.addEventListener('mouseup', () => {
-      isDown = false;
-      carousel.classList.remove('active');
-    });
-    carousel.addEventListener('mousemove', (e) => {
-      if(!isDown) return;
-      e.preventDefault();
-      const x = e.pageX - carousel.offsetLeft;
-      const walk = (x - startX) * 2;
-      carousel.scrollLeft = scrollLeft - walk;
-    });
-
-    // Scroll automático lento
-    function autoScroll() {
-      if (carousel.scrollLeft + carousel.clientWidth >= carousel.scrollWidth) {
-        carousel.scrollTo({ left: 0, behavior: 'smooth' });
-      } else {
-        carousel.scrollBy({ left: 1, behavior: 'smooth' });
+  <!DOCTYPE html>
+  <html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Grupo Borges Captações</title>
+    <style>
+      * { box-sizing: border-box; margin: 0; padding: 0; }
+      body { font-family: Arial, sans-serif; background-color: #f4f4f4; color: #333; line-height: 1.6; }
+      header {
+      background: url('/src/assets/img/bg.jpg') no-repeat center center / cover;
+        color: white;
+        text-align: center;
+        padding: 80px 20px;
       }
-    }
-    setInterval(autoScroll, 20);
+      header h1 {
+        font-size: 2.5em;
+        text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
+      }
+      header p.verse {
+        font-size: 1.3em;
+        margin-top: 15px;
+        text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+      }
+      section { padding: 40px 20px; max-width: 1200px; margin: auto; }
+      .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+      .card {
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        transition: transform 0.2s;
+      }
+      .card:hover { transform: scale(1.02); }
+      .card h3 { margin-bottom: 10px; color: #1e88e5; }
+      .card p { margin-top: 10px; }
+      .icon { font-size: 1.5em; margin-right: 5px; }
+      .gallery {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 15px;
+        padding: 20px;
+      }
+      .gallery img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: transform 0.2s;
+      }
+      .gallery img:hover {
+        transform: scale(1.05);
+      }
+      .modal {
+        display: none;
+        position: fixed;
+        z-index: 9999;
+        left: 0; top: 0;
+        width: 100%; height: 100%;
+        background: rgba(0,0,0,0.8);
+        justify-content: center;
+        align-items: center;
+      }
+      .modal img {
+        max-width: 90%;
+        max-height: 90%;
+        border-radius: 10px;
+      }
+      .contact {
+        text-align: center;
+        padding: 40px 20px;
+        background-color: #1e88e5;
+        color: white;
+      }
+      .contact a {
+        color: white;
+        font-weight: bold;
+        margin: 0 15px;
+        font-size: 1.2em;
+        text-decoration: none;
+      }
+      footer {
+        background: #333;
+        color: white;
+        text-align: center;
+        padding: 20px;
+      }
+      #whatsapp-float {
+        position: fixed;
+        width: 60px;
+        height: 60px;
+        bottom: 20px;
+        right: 20px;
+        background-color: #25d366;
+        color: white;
+        border-radius: 50%;
+        text-align: center;
+        font-size: 30px;
+        box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+        cursor: pointer;
+        z-index: 10000;
 
-    // Touch drag (mobile)
-    let isTouching = false;
-    let touchStartX = 0;
-    let touchScrollLeft = 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      #whatsapp-float img {
+        width: 30px;
+        height: 30px;
+        margin: 0;
+        user-select: none;
+      }
+      #whatsapp-float:hover {
+        box-shadow: 0 0 15px 5px rgba(37, 211, 102, 0.7);
+        transition: box-shadow 0.3s ease;
+      }
+      .carousel-container {
+        position: relative;
+        max-width: 1000px;
+        margin: 0 auto 40px;
+      }
+      .carousel-scroll {
+        display: flex;
+        overflow-x: auto;
+        gap: 20px;
+        padding-bottom: 10px;
+        scroll-behavior: smooth;
+      }
+      .carousel-scroll::-webkit-scrollbar {
+        height: 8px;
+      }
+      .carousel-scroll::-webkit-scrollbar-thumb {
+        background: #1e88e5;
+        border-radius: 4px;
+      }
+      .carousel-scroll::-webkit-scrollbar-track {
+        background: #ddd;
+      }
+      .carousel-card {
+        flex: 0 0 280px;
+        background: white;
+        border-radius: 10px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        padding: 20px;
+        box-sizing: border-box;
+        text-align: center;
+        user-select: none;
+        cursor: grab;
+      }
+      .carousel-card h3 {
+        color: #1e88e5;
+        margin-bottom: 10px;
+      }
+      .carousel-card p {
+        margin-top: 5px;
+        font-size: 0.9em;
+        color: #555;
+      }
+      .carousel-scroll {
+        cursor: grab;
+        user-select: none;
+      }
+      .carousel-scroll.active {
+        cursor: grabbing;
+      }
 
-    carousel.addEventListener('touchstart', (e) => {
-      isTouching = true;
-      touchStartX = e.touches[0].pageX - carousel.offsetLeft;
-      touchScrollLeft = carousel.scrollLeft;
-    }, { passive: true });
 
-    carousel.addEventListener('touchmove', (e) => {
-      if (!isTouching) return;
-      const x = e.touches[0].pageX - carousel.offsetLeft;
-      const walk = (x - touchStartX) * 5; // Ajuste da velocidade
-      carousel.scrollLeft = touchScrollLeft - walk;
-    }, { passive: true });
+  #sobre-nos {
+    background: none;
+    padding: 40px 20px;
+    border-radius: 0;
+    max-width: 1200px;
+    margin: 40px auto;
+    box-shadow: none;
+  }
 
-    carousel.addEventListener('touchend', () => {
-      isTouching = false;
-    });
+  #sobre-nos h2 {
+    color: #000;
+    margin-bottom: 20px;
+    text-align: left;
+    font-size: 2em;
+  }
 
-  </script>
-</body>
-</html>
+  #sobre-nos p {
+    max-width: none;
+    margin: 0 0 15px 0;
+    font-size: 1.1em;
+    color: #444;
+    line-height: 1.5;
+    text-align: left;
+  }
+      
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Clinica de recuperação</h1>
+      <h1>GRUPO BORGES</h1>
+      <p class="verse">"Não fui eu que ordenei a você? Seja forte e corajoso! Não se apavore nem desanime, pois o Senhor, o seu Deus, estará com você por onde você andar."<br>Josué 1:9</p>
+    </header>
+
+    <section id="sobre-nos">
+      <h2>Sobre Nós</h2>
+      <p>Somos uma equipe dedicada e experiente na captação de pacientes para N.A., atuando com sensibilidade e compromisso tanto na captação voluntária quanto involuntária.</p>
+      <p>Trabalhamos incansavelmente para oferecer acesso às melhores clínicas de tratamento em todo o Brasil, garantindo atendimento humanizado e suporte completo.</p>
+      <p>Nosso objetivo é encontrar o caminho certo para cada pessoa, levando esperança, cuidado e transformação para quem precisa.</p>
+      <p>Estamos prontos para buscar e acompanhar você ou seu familiar nessa jornada rumo à recuperação.</p>
+    </section>
+
+    <section>
+      <h2>O que oferecemos</h2>
+      <div class="cards">
+        <div class="card">
+          <h3>Ambiente Seguro</h3>
+          <p>📹 Monitoramento 24h<br>🔏 Privacidade absoluta<br>💂 Segurança garantida</p>
+        </div>
+        <div class="card">
+          <h3>Infraestrutura Completa</h3>
+          <p>🏊 Piscina<br>🛌 Acomodações Confortáveis<br>📺 TV, Netflix e muito mais</p>
+        </div>
+        <div class="card">
+          <h3>Alimentação e Lazer</h3>
+          <p>🍽 4 Refeições diárias<br>♟ Jogos e Atividades<br>🌳 Contato com a Natureza</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Tratamentos Personalizados</h2>
+      <div class="cards">
+        <div class="card">
+          <h3>Equipe Multidisciplinar</h3>
+          <p>👨‍⚕ Psiquiatra<br>👩‍⚕ Psicóloga<br>👩‍⚕ Nutricionista<br>🏋 Fisioterapeuta</p>
+        </div>
+        <div class="card">
+          <h3>Abordagem Terapêutica</h3>
+          <p>📖 12 Passos (A.A./N.A.)<br>🧘 Terapias integradas<br>🎭 Arteterapia e Espiritualidade</p>
+        </div>
+        <div class="card">
+          <h3>Plano de Tratamento</h3>
+          <p>Individualizado e sigiloso<br>Atendimento familiar<br>Acompanhamento contínuo</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Clínicas Parceiras</h2>
+      <div class="carousel-scroll">
+        <div class="carousel-card"><h3>Unidade 1</h3><p>São Paulo, SP</p></div>
+        <div class="carousel-card"><h3>Unidade 2</h3><p>Rio de Janeiro, RJ</p></div>
+        <div class="carousel-card"><h3>Unidade 3</h3><p>Belo Horizonte, MG</p></div>
+        <div class="carousel-card"><h3>Unidade 4</h3><p>Curitiba, PR</p></div>
+        <div class="carousel-card"><h3>Unidade 5</h3><p>Porto Alegre, RS</p></div>
+        <div class="carousel-card"><h3>Unidade 6</h3><p>Fortaleza, CE</p></div>
+        <div class="carousel-card"><h3>Unidade 7</h3><p>Salvador, BA</p></div>
+        <div class="carousel-card"><h3>Unidade 8</h3><p>Recife, PE</p></div>
+        <div class="carousel-card"><h3>Unidade 9</h3><p>Florianópolis, SC</p></div>
+        <div class="carousel-card"><h3>Unidade 10</h3><p>Manaus, AM</p></div>
+        <div class="carousel-card"><h3>Unidade 11</h3><p>Goiânia, GO</p></div>
+        <div class="carousel-card"><h3>Unidade 12</h3><p>Campinas, SP</p></div>
+        <div class="carousel-card"><h3>Unidade 13</h3><p>São Luís, MA</p></div>
+        <div class="carousel-card"><h3>Unidade 14</h3><p>Belém, PA</p></div>
+        <div class="carousel-card"><h3>Unidade 15</h3><p>Cuiabá, MT</p></div>
+        <div class="carousel-card"><h3>Unidade 16</h3><p>Vitória, ES</p></div>
+        <div class="carousel-card"><h3>Unidade 17</h3><p>João Pessoa, PB</p></div>
+        <div class="carousel-card"><h3>Unidade 18</h3><p>Aracaju, SE</p></div>
+        <div class="carousel-card"><h3>Unidade 19</h3><p>Maceió, AL</p></div>
+        <div class="carousel-card"><h3>Unidade 20</h3><p>Ribeirão Preto, SP</p></div>
+        <div class="carousel-card"><h3>Unidade 21</h3><p>São José dos Campos, SP</p></div>
+        <div class="carousel-card"><h3>Unidade 22</h3><p>Uberlândia, MG</p></div>
+        <div class="carousel-card"><h3>Unidade 23</h3><p>Pelotas, RS</p></div>
+        <div class="carousel-card"><h3>Unidade 24</h3><p>Taubaté, SP</p></div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Galeria de Imagens</h2>
+      <div class="gallery">
+        <img src="src/assets/img/1.jpg" alt="Clínica 1" onclick="openModal(this.src)" />
+        <img src="src/assets/img/2.jpg" alt="Clínica 2" onclick="openModal(this.src)" />
+        <img src="src/assets/img/3.jpg" alt="Clínica 3" onclick="openModal(this.src)" />
+        <img src="src/assets/img/4.jpg" alt="Clínica 4" onclick="openModal(this.src)" />
+        <img src="src/assets/img/5.jpg" alt="Clínica 5" onclick="openModal(this.src)" />
+        <img src="src/assets/img/6.jpg" alt="Clínica 6" onclick="openModal(this.src)" />
+        <img src="src/assets/img/7.jpg" alt="Clínica 7" onclick="openModal(this.src)" />
+        <img src="src/assets/img/8.jpg" alt="Clínica 8" onclick="openModal(this.src)" />
+      </div>
+    </section>
+
+    <div class="modal" id="imgModal" onclick="closeModal()">
+      <img id="modalImg" src="" alt="Imagem em destaque" />
+    </div>
+
+    <section class="contact">
+      <h2>Fale Conosco</h2>
+      <p>Estamos disponíveis 24 horas por dia para atender você e sua família.</p>
+      <a href="https://api.whatsapp.com/send?phone=SEUNUMERO" target="_blank">📱 Whatsapp</a>
+      <a href="https://facebook.com/SUAPAGINA" target="_blank">📘 Facebook</a>
+      <a href="https://instagram.com/SEUINSTAGRAM" target="_blank">📷 Instagram</a>
+    </section>
+
+    <a href="https://api.whatsapp.com/send?phone=SEUNUMERO" target="_blank" id="whatsapp-float" aria-label="WhatsApp">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp"/>
+    </a>
+
+    <footer>
+      <p>&copy; 2025 Centro Terapêutico Despertar Nova Era. Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+      function openModal(src) {
+        document.getElementById('modalImg').src = src;
+        document.getElementById('imgModal').style.display = 'flex';
+      }
+      function closeModal() {
+        document.getElementById('imgModal').style.display = 'none';
+      }
+
+      const carousel = document.querySelector('.carousel-scroll');
+
+      let isDown = false;
+      let startX;
+      let scrollLeft;
+
+      // Mouse drag (desktop)
+      carousel.addEventListener('mousedown', (e) => {
+        isDown = true;
+        carousel.classList.add('active');
+        startX = e.pageX - carousel.offsetLeft;
+        scrollLeft = carousel.scrollLeft;
+      });
+      carousel.addEventListener('mouseleave', () => {
+        isDown = false;
+        carousel.classList.remove('active');
+      });
+      carousel.addEventListener('mouseup', () => {
+        isDown = false;
+        carousel.classList.remove('active');
+      });
+      carousel.addEventListener('mousemove', (e) => {
+        if(!isDown) return;
+        e.preventDefault();
+        const x = e.pageX - carousel.offsetLeft;
+        const walk = (x - startX) * 2;
+        carousel.scrollLeft = scrollLeft - walk;
+      });
+
+      // Scroll automático lento
+      function autoScroll() {
+        if (carousel.scrollLeft + carousel.clientWidth >= carousel.scrollWidth) {
+          carousel.scrollTo({ left: 0, behavior: 'smooth' });
+        } else {
+          carousel.scrollBy({ left: 1, behavior: 'smooth' });
+        }
+      }
+      setInterval(autoScroll, 20);
+
+      // Touch drag (mobile)
+      let isTouching = false;
+      let touchStartX = 0;
+      let touchScrollLeft = 0;
+
+      carousel.addEventListener('touchstart', (e) => {
+        isTouching = true;
+        touchStartX = e.touches[0].pageX - carousel.offsetLeft;
+        touchScrollLeft = carousel.scrollLeft;
+      }, { passive: true });
+
+      carousel.addEventListener('touchmove', (e) => {
+        if (!isTouching) return;
+        const x = e.touches[0].pageX - carousel.offsetLeft;
+        const walk = (x - touchStartX) * 5; // Ajuste da velocidade
+        carousel.scrollLeft = touchScrollLeft - walk;
+      }, { passive: true });
+
+      carousel.addEventListener('touchend', () => {
+        isTouching = false;
+      });
+
+    </script>
+  </body>
+  </html>
