@@ -9,7 +9,6 @@ Para acessar a demonstração do projeto <a href="https://borges-captacoes.netli
 
 - **Apresentação Institucional:** Informações sobre a missão e abordagem do Grupo Borges.
 - **Serviços oferecidos:** Detalhamento de infraestrutura, equipe e tratamento.
-- **Clínicas Parceiras:** Carrossel com diversas unidades espalhadas pelo Brasil.
 - **Galeria de Imagens:** Exibição das dependências das clínicas com visualização ampliada.
 - **Contato Rápido:** Links diretos para WhatsApp, Facebook e Instagram.
 - **Botão flutuante do WhatsApp:** Acesso rápido ao atendimento.
