@@ -1,91 +1,41 @@
-# Clínica Nova Vida
+# Grupo Borges Captações - Clínica de Recuperação
 
-## Projeto
-
-### Descrição
-Este projeto apresenta a estrutura e os serviços oferecidos pela **Clínica Nova Vida**, uma instituição especializada no tratamento masculino de alcoolismo, dependência química e depressão. O tratamento é realizado por uma equipe multidisciplinar com foco na transformação comportamental, essencial para a recuperação duradoura do paciente.
+Este projeto é um site institucional para o **Grupo Borges**, especializado na captação de pacientes para clínicas de recuperação (voluntária e involuntária). A página tem como foco apresentar os serviços oferecidos, as unidades parceiras e canais de contato.
 
 ### Demonstração
-Para acessar a demonstração do projeto <a href="https://clinica-novavida.netlify.app/" target="_blank">Clique aqui</a>
+Para acessar a demonstração do projeto <a href="https://borgescaptacoes.netlify.app/" target="_blank">Clique aqui</a>
 
+## 📌 Funcionalidades
 
-## Tratamento
+- **Apresentação Institucional:** Informações sobre a missão e abordagem do Grupo Borges.
+- **Serviços oferecidos:** Detalhamento de infraestrutura, equipe e tratamento.
+- **Clínicas Parceiras:** Carrossel com diversas unidades espalhadas pelo Brasil.
+- **Galeria de Imagens:** Exibição das dependências das clínicas com visualização ampliada.
+- **Contato Rápido:** Links diretos para WhatsApp, Facebook e Instagram.
+- **Botão flutuante do WhatsApp:** Acesso rápido ao atendimento.
 
-### Estrutura do Tratamento
-O tratamento tem duração de **6 meses**, dividido em 3 fases de 2 meses:
+## 💻 Tecnologias Utilizadas
 
-- **Fase 1:** Desintoxicação física e mental
-- **Fase 2:** Terapia intensiva e reestruturação emocional
-- **Fase 3:** Preparação para reintegração social, familiar e profissional
+- HTML5
+- CSS3 (estilização customizada)
+- JavaScript puro (sem frameworks)
+- Layout responsivo com **Grid** e **Flexbox**
 
-Durante todas as fases, o paciente conta com acompanhamento médico, psicológico, terapêutico e suporte nutricional.
+## 🔧 Estrutura
 
-## Serviços Oferecidos
+O projeto está contido em um único arquivo `HTML`, com estilo e scripts embutidos. Não depende de bibliotecas externas.
 
-### Equipe Técnica
-- **Médico Clínico Geral:** 2x por semana e plantão
-- **Psicólogas:** Sessões semanais (seg, qua, qui e sex)
-- **Terapeutas:** 12 Passos, TRE, PPR e TCC
-- **Coordenadores:** 24h por dia
-- **Conselheiros:** Apoio 24h
-- **Enfermagem:** 24h por dia
-- **Nutricionista:** Planejamento alimentar completo
+### Seções principais:
+- `header`: título e versículo motivacional
+- `#sobre-nos`: apresentação da empresa
+- `Serviços e Tratamentos`: cards explicativos
+- `carousel-scroll`: unidades parceiras
+- `Galeria de imagens`: fotos clicáveis com modal
+- `Contato`: links para redes sociais
+- `Footer`: rodapé institucional
 
-### Estrutura Física
-- **Quartos:** Suítes com TV
-- **Refeições:** 4 por dia (café da manhã, almoço, café da tarde e jantar)
-- **Lavanderia:** Funcionamento diário
-- **Lazer e Esporte:** Piscina, campo de futebol de areia, academia e lago para pesca
-- **Espiritualidade:** Atividades 2x ao dia, todos os dias
+## 📝 Observações
 
-## Investimento
-
-O valor do tratamento é acordado conforme o caso. O investimento inclui:
-
-- Acomodação confortável com beliches, armários individuais e banheiro privativo
-- Alimentação e estrutura completa
-- Atendimento médico e terapêutico
-
-### Transporte
-Serviço de remoção opcional, com equipe especializada composta por motorista e 3 socorristas treinados. O valor é calculado conforme a localidade.
-
-## Admissão do Paciente
-
-### Documentos
-- RG e CPF ou CNH (paciente e responsável)
-- Cartão do SUS
-- Comprovante de residência
-
-### Enxoval
-- 5 cuecas
-- 3 pares de meias
-- 5 bermudas
-- 2 calças
-- 2 blusas de frio
-- 1 chinelo
-
-### Roupa de Cama
-- 2 lençóis com elástico
-- 1 travesseiro
-- 2 cobertores
-
-### Itens de Higiene
-- Escova e pasta de dente
-- Shampoo
-- Sabonete + saboneteira
-- Creme corporal (opcional)
-- Repelente
-
-### Lavanderia
-- 2 sabões em pó
-- 2 amaciantes
-- 1 água sanitária
-
-### Opcional
-- Ventilador (modelo livre)
-
-## Contato
-
-**Clínica Nova Vida**  
-📍 Via Martim Lutéro, Km 03, Bairro dos Pires, Limeira - SP  
-📞 (19) 996xx-xxxx  
+- As imagens estão referenciadas em `src/assets/img/` (certifique-se de ter essas imagens no local correto).
+- Altere os links de contato (`SEUNUMERO`, `SUAPAGINA`, `SEUINSTAGRAM`) com suas informações reais.
+- O carrossel de clínicas tem scroll automático e também permite interação manual (mouse e touch).
