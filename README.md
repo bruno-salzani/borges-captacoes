@@ -3,7 +3,7 @@
 Este projeto é um site institucional para o **Grupo Borges**, especializado na captação de pacientes para clínicas de recuperação (voluntária e involuntária). A página tem como foco apresentar os serviços oferecidos, as unidades parceiras e canais de contato.
 
 ### Demonstração
-Para acessar a demonstração do projeto <a href="https://borgescaptacoes.netlify.app/" target="_blank">Clique aqui</a>
+Para acessar a demonstração do projeto <a href="https://borges-captacoes.netlify.app/" target="_blank">Clique aqui</a>
 
 ## 📌 Funcionalidades
 
