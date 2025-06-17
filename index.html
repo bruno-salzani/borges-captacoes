@@ -369,7 +369,7 @@
     carousel.addEventListener('touchmove', (e) => {
       if (!isTouching) return;
       const x = e.touches[0].pageX - carousel.offsetLeft;
-      const walk = (x - touchStartX) * 2; // Ajuste da velocidade
+      const walk = (x - touchStartX) * 5; // Ajuste da velocidade
       carousel.scrollLeft = touchScrollLeft - walk;
     }, { passive: true });
 
