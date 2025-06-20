@@ -1,210 +1,11 @@
-  <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Grupo Borges Captações</title>
-  <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: Arial, sans-serif; background-color: #f4f4f4; color: #333; line-height: 1.6; }
-    header {
-      background: url('src/assets/img/bg.jpg') no-repeat center center / cover;
-      color: white;
-      text-align: center;
-      padding: 80px 20px;
-    }
-    header h1 {
-      font-size: 2.5em;
-      text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
-    }
-    header p.verse {
-      font-size: 1.3em;
-      margin-top: 15px;
-      text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
-    }
-      h1 {
-      margin: 0;
-    }
-    h1 + h1 {
-      margin-top: -10px; /* diminua esse valor para aproximar mais */
-    }
-    section { padding: 40px 20px; max-width: 1200px; margin: auto; }
-    .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
-    .card {
-      background: white;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      transition: transform 0.2s;
-    }
-    .card:hover { transform: scale(1.02); }
-    .card h3 { margin-bottom: 10px; color: #1e88e5; }
-    .card p { margin-top: 10px; }
-    .icon { font-size: 1.5em; margin-right: 5px; }
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 15px;
-      padding: 20px;
-    }
-    .gallery img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-      border-radius: 10px;
-      cursor: pointer;
-      transition: transform 0.2s;
-    }
-    .gallery img:hover {
-      transform: scale(1.05);
-    }
-    .modal {
-      display: none;
-      position: fixed;
-      z-index: 9999;
-      left: 0; top: 0;
-      width: 100%; height: 100%;
-      background: rgba(0,0,0,0.8);
-      justify-content: center;
-      align-items: center;
-    }
-    .modal img {
-      max-width: 90%;
-      max-height: 90%;
-      border-radius: 10px;
-    }
-    .contact {
-      text-align: center;
-      padding: 40px 20px;
-      background-color: #1e88e5;
-      color: white;
-    }
-    .contact a {
-      color: white;
-      font-weight: bold;
-      margin: 0 15px;
-      font-size: 1.2em;
-      text-decoration: none;
-    }
-    footer {
-      background: #333;
-      color: white;
-      text-align: center;
-      padding: 20px;
-    }
-    #whatsapp-float {
-      position: fixed;
-      width: 60px;
-      height: 60px;
-      bottom: 20px;
-      right: 20px;
-      background-color: #25d366;
-      color: white;
-      border-radius: 50%;
-      text-align: center;
-      font-size: 30px;
-      box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
-      cursor: pointer;
-      z-index: 10000;
-
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-    #whatsapp-float img {
-      width: 30px;
-      height: 30px;
-      margin: 0;
-      user-select: none;
-    }
-    #whatsapp-float:hover {
-      box-shadow: 0 0 15px 5px rgba(37, 211, 102, 0.7);
-      transition: box-shadow 0.3s ease;
-    }
-    .carousel-container {
-      position: relative;
-      max-width: 1000px;
-      margin: 0 auto 40px;
-    }
-    .carousel-scroll {
-      display: flex;
-      overflow-x: auto;
-      gap: 20px;
-      padding-bottom: 10px;
-      scroll-behavior: smooth;
-    }
-    .carousel-scroll::-webkit-scrollbar {
-      height: 8px;
-    }
-    .carousel-scroll::-webkit-scrollbar-thumb {
-      background: #1e88e5;
-      border-radius: 4px;
-    }
-    .carousel-scroll::-webkit-scrollbar-track {
-      background: #ddd;
-    }
-    .carousel-card {
-      flex: 0 0 280px;
-      background: white;
-      border-radius: 10px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      padding: 20px;
-      box-sizing: border-box;
-      text-align: center;
-      user-select: none;
-      cursor: grab;
-      padding: 0;
-    }
-    .carousel-card:hover {
-      transform: scale(1.05);
-    }
-    .carousel-card {
-      height: 180px;
-      object-fit: cover;
-      border-radius: 10px;
-    }
-    .carousel-card h3 {
-      color: #1e88e5;
-      margin-bottom: 10px;
-    }
-    .carousel-card p {
-      margin-top: 5px;
-      font-size: 0.9em;
-      color: #555;
-    }
-    .carousel-scroll {
-      cursor: grab;
-      user-select: none;
-    }
-    .carousel-scroll.active {
-      cursor: grabbing;
-    }
-  #sobre-nos {
-    background: none;
-    padding: 40px 20px;
-    border-radius: 0;
-    max-width: 1200px;
-    margin: 40px auto;
-    box-shadow: none;
-  }
-
-  #sobre-nos h2 {
-    color: #000;
-    margin-bottom: 20px;
-    text-align: left;
-    font-size: 2em;
-  }
-
-  #sobre-nos p {
-    max-width: none;
-    margin: 0 0 15px 0;
-    font-size: 1.1em;
-    color: #444;
-    line-height: 1.5;
-    text-align: left;
-  }
-    
-    </style>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="src/css/style.css">
+    <title>Grupo Borges Captações</title>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-0HGGX1LKJ7"></script>
     <script>
@@ -213,13 +14,44 @@
       gtag('js', new Date());
 
       gtag('config', 'G-0HGGX1LKJ7');
-</script>
+    </script>
+    <script>
+      const hamburger = document.getElementById('hamburger');
+      const menu = document.getElementById('menu');
+    
+      hamburger.addEventListener('click', () => {
+        menu.classList.toggle('active');
+      });
+    </script>
   </head>
   <body>
+    <nav class="navbar">
+      <div class="navbar-left">
+        <span class="logo">Borges Captações</span>
+      </div>
+    
+      <div class="menu" id="menu">
+        <a href="#sobre-nos">Sobre</a>
+        <a href="#tratamentos">Tratamentos</a>
+        <a href="#familia">Família</a>
+        <a href="#contato">Contato</a>
+      </div>
+    
+      <a href="https://api.whatsapp.com/send?phone=5511953429186" class="whatsapp-button" target="_blank">
+        💬 FALE CONOSCO
+      </a>
+    
+      <div class="hamburger" id="hamburger">&#9776;</div>
+    </nav>
     <header>
-      <h1>GRUPO BORGES CAPTAÇÕES</h1>
-      <p class="verse">"Não fui eu que ordenei a você? Seja forte e corajoso! Não se apavore nem desanime, pois o Senhor, o seu Deus, estará com você por onde você andar."<br>Josué 1:9</p>
+      <h1>BORGES CAPTAÇÕES</h1>
+      <p class="verse">Reconstruindo Caminhos com Acolhimento e Respeito. Oferecemos apoio especializado e atendimento humanizado para ajudar cada pessoa a recuperar sua autonomia, em um espaço seguro, acolhedor e voltado para o bem-estar integral.</p>
+      <a class="cta-button" href="https://api.whatsapp.com/send?phone=5511953429186" target="_blank">📅 Agende uma visita</a>
     </header>
+
+    <div class="banner-strip">
+      MONITORAMENTO 24H • AMBIENTE SEGURO • REFEIÇÕES DIÁRIAS • APOIO FAMILIAR • ACOMPANHAMENTO CONTÍNUO • ATENDIMENTO HUMANIZADO
+    </div>
 
     <section id="sobre-nos">
       <h2>Sobre Nós</h2>
@@ -265,19 +97,19 @@
       </div>
     </section>
 
-  <section>
-    <h2>Galeria de Imagens</h2>
-    <div class="carousel-scroll">
-      <img class="carousel-card" src="src/assets/img/1.jpg" alt="Clínica 1" onclick="openModal(this.src)" />
-      <img class="carousel-card" src="src/assets/img/2.jpg" alt="Clínica 2" onclick="openModal(this.src)" />
-      <img class="carousel-card" src="src/assets/img/3.jpg" alt="Clínica 3" onclick="openModal(this.src)" />
-      <img class="carousel-card" src="src/assets/img/4.jpg" alt="Clínica 4" onclick="openModal(this.src)" />
-      <img class="carousel-card" src="src/assets/img/5.jpg" alt="Clínica 5" onclick="openModal(this.src)" />
-      <img class="carousel-card" src="src/assets/img/6.jpg" alt="Clínica 6" onclick="openModal(this.src)" />
-      <img class="carousel-card" src="src/assets/img/7.jpg" alt="Clínica 7" onclick="openModal(this.src)" />
-      <img class="carousel-card" src="src/assets/img/8.jpg" alt="Clínica 8" onclick="openModal(this.src)" />
-    </div>
-  </section>
+    <section>
+      <h2>Galeria de Imagens</h2>
+      <div class="carousel-scroll">
+        <img class="carousel-card" src="src/assets/img/1.jpg" alt="Clínica 1" onclick="openModal(this.src)" />
+        <img class="carousel-card" src="src/assets/img/2.jpg" alt="Clínica 2" onclick="openModal(this.src)" />
+        <img class="carousel-card" src="src/assets/img/3.jpg" alt="Clínica 3" onclick="openModal(this.src)" />
+        <img class="carousel-card" src="src/assets/img/4.jpg" alt="Clínica 4" onclick="openModal(this.src)" />
+        <img class="carousel-card" src="src/assets/img/5.jpg" alt="Clínica 5" onclick="openModal(this.src)" />
+        <img class="carousel-card" src="src/assets/img/6.jpg" alt="Clínica 6" onclick="openModal(this.src)" />
+        <img class="carousel-card" src="src/assets/img/7.jpg" alt="Clínica 7" onclick="openModal(this.src)" />
+        <img class="carousel-card" src="src/assets/img/8.jpg" alt="Clínica 8" onclick="openModal(this.src)" />
+      </div>
+    </section>
 
     <div class="modal" id="imgModal" onclick="closeModal()">
       <img id="modalImg" src="" alt="Imagem em destaque" />
