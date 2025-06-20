@@ -12,15 +12,16 @@
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-
       gtag('config', 'G-0HGGX1LKJ7');
     </script>
     <script>
-      const hamburger = document.getElementById('hamburger');
-      const menu = document.getElementById('menu');
-    
-      hamburger.addEventListener('click', () => {
-        menu.classList.toggle('active');
+      document.addEventListener('DOMContentLoaded', function () {
+        const hamburger = document.getElementById('hamburger');
+        const menu = document.getElementById('menu');
+
+        hamburger.addEventListener('click', () => {
+          menu.classList.toggle('active');
+        });
       });
     </script>
   </head>
@@ -29,20 +30,18 @@
       <div class="navbar-left">
         <span class="logo">Borges Captações</span>
       </div>
-    
       <div class="menu" id="menu">
         <a href="#sobre-nos">Sobre</a>
         <a href="#tratamentos">Tratamentos</a>
         <a href="#familia">Família</a>
         <a href="#contato">Contato</a>
       </div>
-    
       <a href="https://api.whatsapp.com/send?phone=5511953429186" class="whatsapp-button" target="_blank">
         💬 FALE CONOSCO
       </a>
-    
       <div class="hamburger" id="hamburger">&#9776;</div>
     </nav>
+
     <header>
       <h1>BORGES CAPTAÇÕES</h1>
       <p class="verse">Reconstruindo Caminhos com Acolhimento e Respeito. Oferecemos apoio especializado e atendimento humanizado para ajudar cada pessoa a recuperar sua autonomia, em um espaço seguro, acolhedor e voltado para o bem-estar integral.</p>
@@ -53,12 +52,14 @@
       MONITORAMENTO 24H • AMBIENTE SEGURO • REFEIÇÕES DIÁRIAS • APOIO FAMILIAR • ACOMPANHAMENTO CONTÍNUO • ATENDIMENTO HUMANIZADO
     </div>
 
-    <section id="sobre-nos">
-      <h2>Sobre Nós</h2>
-      <p>Somos uma equipe dedicada e experiente na captação de pacientes para N.A., atuando com sensibilidade e compromisso tanto na captação voluntária quanto involuntária.</p>
-      <p>Trabalhamos incansavelmente para oferecer acesso às melhores clínicas de tratamento em todo o Brasil, garantindo atendimento humanizado e suporte completo.</p>
-      <p>Nosso objetivo é encontrar o caminho certo para cada pessoa, levando esperança, cuidado e transformação para quem precisa.</p>
-      <p>Estamos prontos para buscar e acompanhar você ou seu familiar nessa jornada rumo à recuperação.</p>
+    <!-- Seções de conteúdo -->
+    <section class="feature-row">
+      <img src="src/assets/img/fachada.jpg" alt="Fachada">
+      <div class="feature-content">
+        <h3>Confiança, Ciência e Empatia</h3>
+        <p>Nossa equipe desenvolve um atendimento confiável e abrangente para o paciente e sua família.</p>
+        <a href="#contato" class="btn-dark">⚕ Quero saber mais</a>
+      </div>
     </section>
 
     <section>
@@ -97,30 +98,39 @@
       </div>
     </section>
 
-    <section>
-      <h2>Galeria de Imagens</h2>
-      <div class="carousel-scroll">
-        <img class="carousel-card" src="src/assets/img/1.jpg" alt="Clínica 1" onclick="openModal(this.src)" />
-        <img class="carousel-card" src="src/assets/img/2.jpg" alt="Clínica 2" onclick="openModal(this.src)" />
-        <img class="carousel-card" src="src/assets/img/3.jpg" alt="Clínica 3" onclick="openModal(this.src)" />
-        <img class="carousel-card" src="src/assets/img/4.jpg" alt="Clínica 4" onclick="openModal(this.src)" />
-        <img class="carousel-card" src="src/assets/img/5.jpg" alt="Clínica 5" onclick="openModal(this.src)" />
-        <img class="carousel-card" src="src/assets/img/6.jpg" alt="Clínica 6" onclick="openModal(this.src)" />
-        <img class="carousel-card" src="src/assets/img/7.jpg" alt="Clínica 7" onclick="openModal(this.src)" />
-        <img class="carousel-card" src="src/assets/img/8.jpg" alt="Clínica 8" onclick="openModal(this.src)" />
+    <section class="feature-row reverse">
+      <img src="src/assets/img/piscina.jpg" alt="Piscina">
+      <div class="feature-content">
+        <h3>Sobre Nós</h3>
+        <p>Somos uma equipe dedicada e experiente na captação de pacientes para N.A., atuando com sensibilidade e compromisso tanto na captação voluntária quanto involuntária.
+        Trabalhamos incansavelmente para oferecer acesso às melhores clínicas de tratamento em todo o Brasil, garantindo atendimento humanizado e suporte completo.
+        Nosso objetivo é encontrar o caminho certo para cada pessoa, levando esperança, cuidado e transformação para quem precisa.
+        Estamos prontos para buscar e acompanhar você ou seu familiar nessa jornada rumo à recuperação.</p>
+        <a href="#contato" class="btn-dark">📅 Agende uma visita</a>
       </div>
     </section>
 
-    <div class="modal" id="imgModal" onclick="closeModal()">
-      <img id="modalImg" src="" alt="Imagem em destaque" />
-    </div>
 
-    <section class="contact">
+
+    <section class="gallery-grid" id="estrutura">
+      <h2>Estrutura</h2>
+      <p>Conheça um pouco mais da clínica mais avançada em reabilitação.</p>
+      <div class="grid">
+        <img src="src/assets/img/1.jpg" alt="Entrada">
+        <img src="src/assets/img/2.jpg" alt="Fachada">
+        <img src="src/assets/img/3.jpg" alt="Vista">
+        <img src="src/assets/img/4.jpg" alt="Academia">
+        <img src="src/assets/img/5.jpg" alt="Piscina">
+        <img src="src/assets/img/6.jpg" alt="Quartos">
+        <img src="src/assets/img/7.jpg" alt="Jardim">
+        <img src="src/assets/img/8.jpg" alt="Área Verde">
+      </div>
+    </section>
+
+    <section class="contact" id="contato">
       <h2>Fale Conosco</h2>
       <p>Estamos disponíveis 24 horas por dia para atender você e sua família.</p>
       <a href="https://api.whatsapp.com/send?phone=5511953429186" target="_blank">📱 Whatsapp</a>
-<!--       <a href="" target="_blank">📘 Facebook</a> -->
-<!--       <a href="" target="_blank">📷 Instagram</a> -->
     </section>
 
     <a href="https://api.whatsapp.com/send?phone=5511953429186" target="_blank" id="whatsapp-float" aria-label="WhatsApp">
@@ -128,79 +138,7 @@
     </a>
 
     <footer>
-      <p>&copy; 2025 Centro Terapêutico Despertar Nova Era. Todos os direitos reservados.</p>
+      <p>&copy; 2025 Grupo Borges Captações. Todos os direitos reservados.</p>
     </footer>
-
-    <script>
-      function openModal(src) {
-        document.getElementById('modalImg').src = src;
-        document.getElementById('imgModal').style.display = 'flex';
-      }
-      function closeModal() {
-        document.getElementById('imgModal').style.display = 'none';
-      }
-
-      const carousel = document.querySelector('.carousel-scroll');
-
-      let isDown = false;
-      let startX;
-      let scrollLeft;
-
-      // Mouse drag (desktop)
-      carousel.addEventListener('mousedown', (e) => {
-        isDown = true;
-        carousel.classList.add('active');
-        startX = e.pageX - carousel.offsetLeft;
-        scrollLeft = carousel.scrollLeft;
-      });
-      carousel.addEventListener('mouseleave', () => {
-        isDown = false;
-        carousel.classList.remove('active');
-      });
-      carousel.addEventListener('mouseup', () => {
-        isDown = false;
-        carousel.classList.remove('active');
-      });
-      carousel.addEventListener('mousemove', (e) => {
-        if(!isDown) return;
-        e.preventDefault();
-        const x = e.pageX - carousel.offsetLeft;
-        const walk = (x - startX) * 2;
-        carousel.scrollLeft = scrollLeft - walk;
-      });
-
-      // Scroll automático lento
-      function autoScroll() {
-        if (carousel.scrollLeft + carousel.clientWidth >= carousel.scrollWidth) {
-          carousel.scrollTo({ left: 0, behavior: 'smooth' });
-        } else {
-          carousel.scrollBy({ left: 1, behavior: 'smooth' });
-        }
-      }
-      setInterval(autoScroll, 20);
-
-      // Touch drag (mobile)
-      let isTouching = false;
-      let touchStartX = 0;
-      let touchScrollLeft = 0;
-
-      carousel.addEventListener('touchstart', (e) => {
-        isTouching = true;
-        touchStartX = e.touches[0].pageX - carousel.offsetLeft;
-        touchScrollLeft = carousel.scrollLeft;
-      }, { passive: true });
-
-      carousel.addEventListener('touchmove', (e) => {
-        if (!isTouching) return;
-        const x = e.touches[0].pageX - carousel.offsetLeft;
-        const walk = (x - touchStartX) * 5; // Ajuste da velocidade
-        carousel.scrollLeft = touchScrollLeft - walk;
-      }, { passive: true });
-
-      carousel.addEventListener('touchend', () => {
-        isTouching = false;
-      });
-
-    </script>
   </body>
-  </html>
+</html>
