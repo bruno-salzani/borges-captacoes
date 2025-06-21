@@ -19,15 +19,21 @@
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
-html { scroll-behavior: smooth; }
-
-body {
-  font-family: 'Inter', sans-serif;
-  background-color: var(--gray-200);
-  color: var(--gray-700);
-  line-height: 1.6;
-  scroll-padding-top: 80px;
-}
+html {
+	scroll-behavior: smooth;
+	width: 100%;
+	overflow-x: hidden;
+  }
+  
+  body {
+	font-family: 'Inter', sans-serif;
+	background-color: var(--gray-200);
+	color: var(--gray-700);
+	line-height: 1.6;
+	scroll-padding-top: 80px;
+	width: 100%;
+	overflow-x: hidden;
+  }
 
 img { display: block; max-width: 100%; height: auto; }
 
@@ -97,15 +103,17 @@ header p.verse {
    NAVBAR
    ===================== */
 .navbar {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  background: var(--white);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 1rem 2.5rem;
-  box-shadow: var(--shadow-sm);
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+z-index: 1000;
+background: var(--white);
+display: flex;
+align-items: center;
+justify-content: space-between;
+padding: 1rem 2.5rem;
+box-shadow: var(--shadow-sm);
 }
 .navbar .logo {
   font-size: 1.45rem;
@@ -154,6 +162,7 @@ header p.verse {
     padding: 1rem 0;
     display: none;
     box-shadow: var(--shadow-md);
+	width: 100%;
 	
   }
   .menu a {
@@ -362,6 +371,6 @@ footer {
 @media(max-width: 480px){
 	#whatsapp-float {
 	  bottom: 2rem;
-	  right: 4.2rem;
+	  right: 2rem;
 	}
   }
