@@ -1,45 +1,72 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" dir="ltr">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <link rel="icon" type="image/png" href="src/assets/img/favicon.png">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="src/css/style.css">
-    <title>Borges Captações</title>
-    <!-- Google tag (gtag.js) -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Clínica de reabilitação especializada em dependência química e transtornos mentais. Atendimento humanizado 24h. Fale conosco." />
+    <meta name="keywords" content="clínica de reabilitação, internação involuntária, dependência química, tratamento drogas, alcoolismo, transtornos mentais" />
+    <meta name="author" content="Borges Captações" />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#004620" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="HandheldFriendly" content="true" />
+    <meta name="format-detection" content="telephone=no" />
+    <link rel="alternate" href="https://borgescaptacoes.com.br" hreflang="pt-br" />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Borges Captações - Clínica de Reabilitação e Tratamento" />
+    <meta property="og:description" content="Oferecemos internação voluntária e involuntária com acolhimento, estrutura segura e equipe especializada." />
+    <meta property="og:image" content="https://borgescaptacoes.com.br/src/assets/img/fachada.jpg" />
+    <meta property="og:url" content="https://borgescaptacoes.com.br" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:site_name" content="Borges Captações" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Borges Captações" />
+    <meta name="twitter:description" content="Clínica de recuperação com atendimento humanizado e estrutura completa." />
+    <meta name="twitter:image" content="https://borgescaptacoes.com.br/src/assets/img/fachada.jpg" />
+
+    <link rel="canonical" href="https://borgescaptacoes.com.br" />
+    <link rel="icon" type="image/png" href="src/assets/img/favicon.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="src/assets/img/favicon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" as="style" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="src/css/style.css" />
+
+    <title>Clínica de Recuperação em São Paulo | Borges Captações</title>
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"MedicalClinic","name":"Borges Captações","description":"Clínica de reabilitação especializada em dependência química e transtornos mentais.","url":"https://borgescaptacoes.com.br","logo":"https://borgescaptacoes.com.br/src/assets/img/favicon.png","address":{"@type":"PostalAddress","addressCountry":"BR","addressLocality":"São Paulo"},"geo":{"@type":"GeoCoordinates","latitude":"-23.55052","longitude":"-46.633308"},"contactPoint":{"@type":"ContactPoint","telephone":"+55-11-95342-9186","contactType":"customer service","availableLanguage":["Portuguese"]}}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Borges Captações","url":"https://borgescaptacoes.com.br","potentialAction":{"@type":"CommunicateAction","target":"https://api.whatsapp.com/send?phone=5511953429186","name":"Contato via WhatsApp"}}</script>
+
+    <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-0HGGX1LKJ7"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
+      function gtag() { dataLayer.push(arguments); }
       gtag('js', new Date());
       gtag('config', 'G-0HGGX1LKJ7');
     </script>
-    <script>
-      document.addEventListener('DOMContentLoaded', function () {
-        const hamburger = document.getElementById('hamburger');
-        const menu = document.getElementById('menu');
 
-        hamburger.addEventListener('click', () => {
-          menu.classList.toggle('active');
-        });
-      });
-    </script>
+    <!-- Acessibilidade: Skip link -->
+    <style>.sr-only{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;}</style>
   </head>
   <body>
     <nav class="navbar">
-      <div class="navbar-left">
-        <span class="logo">Borges Captações</span>
-      </div>
+      <div class="navbar-left"><span class="logo">Borges Captações</span></div>
       <div class="menu" id="menu">
         <a href="#sobre-nos">Sobre</a>
         <a href="#estrutura">Estrutura</a>
         <a href="#familia">Tratamentos</a>
         <a href="#contato">Contato</a>
       </div>
-      <a href="https://api.whatsapp.com/send?phone=5511953429186" class="whatsapp-button" target="_blank">
-        💬 FALE CONOSCO
-      </a>
+      <a href="https://api.whatsapp.com/send?phone=5511953429186" class="whatsapp-button" target="_blank" aria-label="Fale conosco via WhatsApp">💬 FALE CONOSCO</a>
       <div class="hamburger" id="hamburger">&#9776;</div>
     </nav>
 
@@ -49,110 +76,80 @@
       <a class="cta-button" href="https://api.whatsapp.com/send?phone=5511953429186" target="_blank">📅 Agende uma visita</a>
     </header>
 
-    <div class="banner-strip">
-      MONITORAMENTO 24H • AMBIENTE SEGURO • REFEIÇÕES DIÁRIAS • APOIO FAMILIAR • ACOMPANHAMENTO CONTÍNUO • ATENDIMENTO HUMANIZADO
-    </div>
+    <main id="main-content" role="main">
+      <div class="banner-strip">MONITORAMENTO 24H • AMBIENTE SEGURO • REFEIÇÕES DIÁRIAS • APOIO FAMILIAR • ACOMPANHAMENTO CONTÍNUO • ATENDIMENTO HUMANIZADO</div>
 
-    <!-- Seções de conteúdo -->
-    <section class="feature-row">
-      <img src="src/assets/img/fachada.jpg" alt="Fachada">
-      <div class="feature-content">
-        <h3>Confiança, Ciência e Empatia</h3>
-        <p>Nossa equipe desenvolve um atendimento confiável e abrangente para o paciente e sua família.</p>
-        <a href="#contato" class="btn-dark">⚕ Quero saber mais</a>
-      </div>
-    </section>
+      <!-- Seções de conteúdo -->
+      <section class="feature-row">
+        <img src="src/assets/img/fachada.jpg" alt="Fachada da clínica Borges Captações em São Paulo" />
+        <div class="feature-content">
+          <h3>Confiança, Ciência e Empatia</h3>
+          <p>Nossa equipe desenvolve um atendimento confiável e abrangente para o paciente e sua família.</p>
+          <a href="#contato" class="btn-dark">⚕ Saiba mais sobre internação</a>
+        </div>
+      </section>
 
-    <section>
-      <h2>O que oferecemos</h2>
-      <div class="cards">
-        <div class="card">
-          <h3>Ambiente Seguro</h3>
-          <p>📹 Monitoramento 24h<br>🔏 Privacidade absoluta<br>💂 Segurança garantida</p>
+      <section>
+        <h2>O que oferecemos</h2>
+        <div class="cards">
+          <div class="card"><h3>Ambiente Seguro</h3><p>📹 Monitoramento 24h<br>🔏 Privacidade absoluta<br>💂 Segurança garantida</p></div>
+          <div class="card"><h3>Infraestrutura Completa</h3><p>🏊 Piscina<br>🛌 Acomodações Confortáveis<br>📺 TV, Academia, Futebol e muito mais</p></div>
+          <div class="card"><h3>Alimentação e Lazer</h3><p>🍽 4 Refeições diárias<br>♟ Jogos e Atividades<br>🌳 Contato com a Natureza</p></div>
         </div>
-        <div class="card">
-          <h3>Infraestrutura Completa</h3>
-          <p>🏊 Piscina<br>🛌 Acomodações Confortáveis<br>📺 TV, Academia, Futebol e muito mais</p>
-        </div>
-        <div class="card">
-          <h3>Alimentação e Lazer</h3>
-          <p>🍽 4 Refeições diárias<br>♟ Jogos e Atividades<br>🌳 Contato com a Natureza</p>
-        </div>
-      </div>
-    </section>
+      </section>
 
-    <section>
-      <h2>Tratamentos Personalizados</h2>
-      <div class="cards">
-        <div class="card">
-          <h3>Equipe Multidisciplinar</h3>
-          <p>👨‍⚕ Psiquiatra<br>👩‍⚕ Psicóloga<br>👩‍⚕ Nutricionista<br>🏋 Fisioterapeuta</p>
+      <section>
+        <h2>Tratamentos Personalizados</h2>
+        <div class="cards">
+          <div class="card"><h3>Equipe Multidisciplinar</h3><p>👨‍⚕ Psiquiatra<br>👩‍⚕ Psicóloga<br>👩‍⚕ Nutricionista<br>🏋 Fisioterapeuta</p></div>
+          <div class="card"><h3>Abordagem Terapêutica</h3><p>📖 12 Passos (A.A./N.A.)<br>🧘 Terapias integradas<br>🎭 Arteterapia e Espiritualidade</p></div>
+          <div class="card"><h3>Plano de Tratamento</h3><p>Individualizado e sigiloso<br>Atendimento familiar<br>Acompanhamento contínuo</p></div>
         </div>
-        <div class="card">
-          <h3>Abordagem Terapêutica</h3>
-          <p>📖 12 Passos (A.A./N.A.)<br>🧘 Terapias integradas<br>🎭 Arteterapia e Espiritualidade</p>
-        </div>
-        <div class="card">
-          <h3>Plano de Tratamento</h3>
-          <p>Individualizado e sigiloso<br>Atendimento familiar<br>Acompanhamento contínuo</p>
-        </div>
-      </div>
-    </section>
+      </section>
 
-    <section id="sobre-nos" class="feature-row reverse">
-      <img src="src/assets/img/piscina.jpg" alt="Piscina">
-      <div class="feature-content">
-        <h3>Sobre Nós</h3>
-        <p>Somos uma equipe dedicada e experiente na captação de pacientes para N.A., atuando com sensibilidade e compromisso tanto na captação voluntária quanto involuntária.
-        Trabalhamos incansavelmente para oferecer acesso às melhores clínicas de tratamento em todo o Brasil, garantindo atendimento humanizado e suporte completo.
-        Nosso objetivo é encontrar o caminho certo para cada pessoa, levando esperança, cuidado e transformação para quem precisa.
-        Estamos prontos para buscar e acompanhar você ou seu familiar nessa jornada rumo à recuperação.</p>
-        <a href="#contato" class="btn-dark">📅 Agende uma visita</a>
-      </div>
-    </section>
-
-
-    <section class="gallery-grid" id="estrutura">
-      <h2>Estrutura</h2>
-      <p>Conheça um pouco mais da clínica mais avançada em reabilitação.</p>
-      <div class="grid">
-        <img src="src/assets/img/1.jpg" alt="Entrada">
-        <img src="src/assets/img/2.jpg" alt="Fachada">
-        <img src="src/assets/img/3.jpg" alt="Vista">
-        <img src="src/assets/img/4.jpg" alt="Academia">
-        <img src="src/assets/img/5.jpg" alt="Piscina">
-        <img src="src/assets/img/6.jpg" alt="Quartos">
-        <img src="src/assets/img/7.jpg" alt="Jardim">
-        <img src="src/assets/img/8.jpg" alt="Área Verde">
-      </div>
-    </section>
-    <section id="familia">
-      <h2>Tratamentos</h2>
-      <div class="slim-cards">
-        <div class="slim-card">
-          <img src="src/assets/img/service_1.png" alt="Transtornos Psiquiátricos">
-          <h4>TRANSTORNOS PSIQUIÁTRICOS</h4>
-          <p>Nas doenças psiquiátricas, existe uma correlação entre gravidade da doença e funcionamento psicossocial. Quanto mais precoce a idade de início dos sintomas, maior o prejuízo no desenvolvimento psicossocial, o que impacta diretamente a trajetória de crescimento educacional, profissional e interpessoal.</p>
+      <section id="sobre-nos" class="feature-row reverse">
+        <img src="src/assets/img/piscina.jpg" alt="Piscina da clínica Borges Captações" />
+        <div class="feature-content">
+          <h3>Sobre Nós</h3>
+          <p>Somos uma equipe dedicada e experiente na captação de pacientes para N.A., atuando com sensibilidade e compromisso tanto na captação voluntária quanto involuntária. Trabalhamos incansavelmente para oferecer acesso às melhores clínicas de tratamento em todo o Brasil, garantindo atendimento humanizado e suporte completo.</p>
+          <a href="#contato" class="btn-dark">📅 Agende uma visita</a>
         </div>
-        <div class="slim-card">
-          <img src="src/assets/img/service_2.png" alt="Transtornos por Uso de Substâncias">
-          <h4>TRANSTORNOS POR USO DE SUBSTÂNCIAS</h4>
-          <p>O Transtorno por Uso de Substâncias (TUS) tem como característica a presença de sintomas cognitivos, comportamentais e fisiológicos indicando o uso contínuo da substância, apesar de problemas significativos relacionados a ela.</p>
+      </section>
+
+      <section class="gallery-grid" id="estrutura">
+        <h2>Estrutura</h2>
+        <p>Conheça um pouco mais da clínica mais avançada em reabilitação.</p>
+        <div class="grid">
+          <img src="src/assets/img/1.jpg" alt="Entrada principal da clínica Borges Captações" loading="lazy" />
+          <img src="src/assets/img/2.jpg" alt="Fachada iluminada da clínica de recuperação" loading="lazy" />
+          <img src="src/assets/img/3.jpg" alt="Vista ampla da clínica e entorno verde" loading="lazy" />
+          <img src="src/assets/img/4.jpg" alt="Academia para reabilitação física dos internos" loading="lazy" />
+          <img src="src/assets/img/5.jpg" alt="Piscina para atividades terapêuticas" loading="lazy" />
+          <img src="src/assets/img/6.jpg" alt="Quartos confortáveis para internação" loading="lazy" />
+          <img src="src/assets/img/7.jpg" alt="Jardim com área para caminhadas e relaxamento" loading="lazy" />
+          <img src="src/assets/img/8.jpg" alt="Área verde com natureza preservada na clínica" loading="lazy" />
         </div>
-      </div>
-    </section>
-    <section class="contact" id="contato">
-      <h2>Fale Conosco</h2>
-      <p>Estamos disponíveis 24 horas por dia para atender você e sua família.</p>
-      <a href="https://api.whatsapp.com/send?phone=5511953429186" target="_blank">📱 Whatsapp</a>
-    </section>
+      </section>
+
+      <section id="familia">
+        <h2>Tratamentos</h2>
+        <div class="slim-cards">
+          <div class="slim-card"><img src="src/assets/img/service_1.png" alt="Ícone representando transtornos psiquiátricos" loading="lazy" /><h4>TRANSTORNOS PSIQUIÁTRICOS</h4><p>Nas doenças psiquiátricas, existe uma correlação entre gravidade da doença e funcionamento psicossocial...</p></div>
+          <div class="slim-card"><img src="src/assets/img/service_2.png" alt="Ícone representando transtornos por uso de substâncias" loading="lazy" /><h4>TRANSTORNOS POR USO DE SUBSTÂNCIAS</h4><p>O Transtorno por Uso de Substâncias (TUS) tem como característica a presença de sintomas...</p></div>
+        </div>
+      </section>
+
+      <section class="contact" id="contato">
+        <h2>Fale Conosco</h2>
+        <p>Estamos disponíveis 24 horas por dia para atender você e sua família.</p>
+        <a href="https://api.whatsapp.com/send?phone=5511953429186" target="_blank">📱 Whatsapp</a>
+      </section>
+    </main>
 
     <a href="https://api.whatsapp.com/send?phone=5511953429186" target="_blank" id="whatsapp-float" aria-label="WhatsApp">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp"/>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="Ícone do WhatsApp para contato" width="40" height="40" loading="lazy" />
     </a>
 
-    <footer>
-      <p>&copy; 2025 Grupo Borges Captações. Todos os direitos reservados.</p>
-    </footer>
+    <footer><p>&copy; 2025 Grupo Borges Captações. Todos os direitos reservados.</p></footer>
   </body>
 </html>

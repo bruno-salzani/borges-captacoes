@@ -1,0 +1,22 @@
+{
+    "name": "Borges Captações",
+    "short_name": "Captações",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#004620",
+    "description": "Clínica de reabilitação e tratamento humanizado.",
+    "icons": [
+      {
+        "src": "src/assets/img/favicon.png",
+        "sizes": "192x192",
+        "type": "image/png"
+      },
+      {
+        "src": "src/assets/img/favicon.png",
+        "sizes": "512x512",
+        "type": "image/png"
+      }
+    ]
+  }
+  
