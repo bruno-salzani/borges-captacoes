@@ -1,40 +1,71 @@
-# Grupo Borges Captações - Clínica de Recuperação
+# Borges Captações - Clínica de Recuperação
 
-Este projeto é um site institucional para o **Grupo Borges**, especializado na captação de pacientes para clínicas de recuperação (voluntária e involuntária). A página tem como foco apresentar os serviços oferecidos, as unidades parceiras e canais de contato.
+Este projeto é um site institucional desenvolvido para o **Grupo Borges Captações**, focado em internações voluntárias e involuntárias, tratamento de dependência química e transtornos mentais. A proposta é apresentar os diferenciais da clínica, estrutura, equipe, serviços oferecidos e facilitar o contato direto com interessados e familiares.
 
-### Demonstração
-Para acessar a demonstração do projeto <a href="https://borges-captacoes.netlify.app/" target="_blank">Clique aqui</a>
+### 🔗 Demonstração
+Acesse a versão publicada: [borgescaptacoes.com.br](https://borgescaptacoes.com.br)
 
-## 📌 Funcionalidades
+---
 
-- **Apresentação Institucional:** Informações sobre a missão e abordagem do Grupo Borges.
-- **Serviços oferecidos:** Detalhamento de infraestrutura, equipe e tratamento.
-- **Galeria de Imagens:** Exibição das dependências das clínicas com visualização ampliada.
-- **Contato Rápido:** Links diretos para WhatsApp, Facebook e Instagram.
-- **Botão flutuante do WhatsApp:** Acesso rápido ao atendimento.
+## 🏥 Funcionalidades
+
+- **Apresentação Institucional**: Missão, visão e valores da clínica.
+- **Serviços Detalhados**: Estrutura física, alimentação, terapias e acompanhamento.
+- **Equipe Multidisciplinar**: Psiquiatras, psicólogos, nutricionistas e terapeutas.
+- **Tratamentos Personalizados**: Abordagem individualizada com base nas necessidades do paciente.
+- **Galeria de Imagens**: Fotos da clínica, estrutura e acomodações.
+- **Contato Rápido**: Botões para WhatsApp, além de links para redes sociais.
+- **Botão Flutuante**: WhatsApp visível em toda navegação.
+- **Layout Responsivo**: Totalmente adaptado para dispositivos móveis.
+
+---
 
 ## 💻 Tecnologias Utilizadas
 
-- HTML5
-- CSS3 (estilização customizada)
-- JavaScript puro (sem frameworks)
-- Layout responsivo com **Grid** e **Flexbox**
+- **HTML5**
+- **CSS3 (Flexbox e Grid)**
+- **JavaScript Puro**
+- Google Fonts (Inter)
+- Google Analytics + Tags de SEO
+- Dados estruturados (JSON-LD)
 
-## 🔧 Estrutura
+---
 
-O projeto está contido em um único arquivo `HTML`, com estilo e scripts embutidos. Não depende de bibliotecas externas.
+## 📁 Estrutura
 
-### Seções principais:
-- `header`: título e versículo motivacional
-- `#sobre-nos`: apresentação da empresa
-- `Serviços e Tratamentos`: cards explicativos
-- `carousel-scroll`: unidades parceiras
-- `Galeria de imagens`: fotos clicáveis com modal
-- `Contato`: links para redes sociais
-- `Footer`: rodapé institucional
+- `index.html`: Página única com todos os recursos embutidos.
+- `src/assets/img/`: Imagens da clínica, ícones, logotipo e favicon.
+- `src/css/style.css`: Estilização geral da página.
 
-## 📝 Observações
+---
 
-- As imagens estão referenciadas em `src/assets/img/` (certifique-se de ter essas imagens no local correto).
-- Altere os links de contato (`SEUNUMERO`, `SUAPAGINA`, `SEUINSTAGRAM`) com suas informações reais.
-- O carrossel de clínicas tem scroll automático e também permite interação manual (mouse e touch).
+## 📌 Seções do Site
+
+- `Header`: Nome da empresa, slogan e chamada para ação.
+- `Sobre Nós`: Quem somos e como atuamos.
+- `O que oferecemos`: Cards explicativos sobre estrutura e rotina.
+- `Tratamentos`: Informações sobre transtornos atendidos.
+- `Estrutura`: Galeria de fotos com visualização responsiva.
+- `Contato`: Link para WhatsApp e canais de comunicação.
+- `Footer`: Direitos autorais.
+
+---
+
+## ⚠️ Observações
+
+- O projeto não utiliza bibliotecas externas (100% HTML, CSS e JS puro).
+- O formulário de contato é feito via redirecionamento ao WhatsApp.
+- O site está otimizado com SEO básico, tags Open Graph e JSON-LD.
+
+---
+
+## 📈 SEO e Monitoramento
+
+- Integrado com [Google Analytics](https://analytics.google.com/)
+- Rastreado pelo [Google Search Console](https://search.google.com/search-console/)
+- Indexado no [Bing Webmaster Tools](https://www.bing.com/webmasters/)
+- Sitemap e robots.txt configurados corretamente
+
+---
+
+&copy; 2025 Borges Captações
