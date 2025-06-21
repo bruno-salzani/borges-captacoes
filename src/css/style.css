@@ -154,6 +154,11 @@ header p.verse {
     padding: 1rem 0;
     display: none;
     box-shadow: var(--shadow-md);
+	
+  }
+  .menu a {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
   }
   .menu.active { display: flex; }
   .hamburger { display:block; color: var(--green-600); }
@@ -316,21 +321,23 @@ section h2 {
 /* =====================
    WHATSAPP FLOAT
    ===================== */
-#whatsapp-float {
-  position: fixed;
-  bottom: 1.5rem;
-  right: 1.5rem;
-  width: 64px;
-  height: 64px;
-  background: var(--green-500);
-  border-radius: var(--radius-full);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  box-shadow: var(--shadow-md);
-  transition: box-shadow .25s, transform .25s;
-  z-index: 10000;
-}
+   #whatsapp-float {
+	position: fixed;
+	bottom: 1.5rem;
+	right: 1.5rem;
+	width: 64px;
+	height: 64px;
+	background: var(--green-500);
+	border-radius: var(--radius-full);
+	display:flex;
+	align-items:center;
+	justify-content:center;
+	box-shadow: var(--shadow-md);
+	transition: box-shadow .25s, transform .25s;
+	z-index: 10000;
+	padding: 8px; /* ADICIONE ISSO */
+	box-sizing: border-box; /* GARANTE QUE padding não ultrapasse o tamanho */
+  }
 #whatsapp-float:hover { box-shadow: 0 0 15px rgba(37,211,102,.7); transform: scale(1.05); }
 #whatsapp-float img { width:34px; height:34px; }
 
@@ -350,3 +357,11 @@ footer {
    ===================== */
 .container { max-width: 1200px; margin-inline:auto; padding-inline:1.25rem; }
 .hide { display:none !important; }
+
+
+@media(max-width: 480px){
+	#whatsapp-float {
+	  bottom: 2rem;
+	  right: 4.2rem;
+	}
+  }
