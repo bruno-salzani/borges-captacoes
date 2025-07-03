@@ -115,7 +115,7 @@ justify-content: space-between;
 padding: 1rem 2.5rem;
 box-shadow: var(--shadow-sm);
 }
-.navbar .logo {
+.navbar .main-logo {
   font-size: 1.45rem;
   font-weight: 700;
   color: var(--green-600);
@@ -367,6 +367,52 @@ footer {
 .container { max-width: 1200px; margin-inline:auto; padding-inline:1.25rem; }
 .hide { display:none !important; }
 
+.convenios-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin-top: 20px;
+  padding: 0 5%;
+}
+
+.logo {
+  width: 22%;              /* 4 por linha com espaçamento */
+  height: 90px;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+
+
+/* Ajustes individuais */
+.logo.unimed {
+  height: 130px;
+}
+
+.logo.bradesco {
+  height: 130px;
+}
+
+.logo.sulamerica {
+  height: 150px;
+}
+
+.logo.porto {
+  height: 75px;
+}
+
+/* Mobile: 1 por linha */
+@media (max-width: 768px) {
+  .logo {
+    width: 100%;
+    margin: 8px 0;
+    height: 80px;
+  }
+}
 
 @media(max-width: 480px){
 	#whatsapp-float {
